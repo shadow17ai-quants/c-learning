@@ -1,0 +1,5 @@
+Day 3 – Handwritten observation (typed):
+I was surprised that %+7.2f%% automatically puts a + sign in front of positive numbers. I thought I would have to write an if statement. The table columns also looked messy until I used %-8s for left alignment and %10.2f for right alignment – then everything clicked.
+
+Day 3 – Reflection (3 sentences):
+%-8s left-aligns a string in an 8-character column. %6d right-aligns an integer with width 6. %10.2f prints a float with total width 10 and 2 decimals, right-aligned. %12.2f does the same for the value column. %+7.2f%% always shows a sign, width 7, 2 decimals, plus a literal %. Without these width specifiers, columns would not align and the table would be unreadable.
