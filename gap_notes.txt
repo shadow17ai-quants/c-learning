@@ -1,0 +1,32 @@
+============================================================
+C QUICK NOTES: printf alignment, #define vs const, division
+============================================================
+
+1) PRINTF TABLE ALIGNMENT
+   - Use width specifiers: %10s (right-align), %-10s (left-align).
+   - For floats: %8.2f means total width 8, 2 decimal places.
+   Example:
+     printf("%-10s %8.2f\n", "Item", 12.50);  // left-aligned label, right-aligned number
+
+2) #define vs const
+   - #define is preprocessor text substitution (no type, no scope, no debug info).
+   - const creates a typed, scoped variable that appears in the symbol table.
+   - Best practice: prefer const for constants in modern C.
+
+3) INTEGER vs FLOAT DIVISION
+   - Integer division: 5/2 → 2 (fraction truncated).
+   - Float division: 5.0/2 → 2.5 (at least one operand is float/double).
+   Example:
+     float a = 5/2;    // a = 2.0
+     float b = 5.0/2;  // b = 2.5
+
+     What is the difference between an int and a double in memory, and why does it matter when storing a stock price vs a share quantity?
+
+     int = exact whole number (no fractions, no errors).
+
+double = approximate binary fraction; values like 0.1 are stored with tiny errors because they can't be represented exactly in base 2.
+
+Share quantity → always a whole number → int is exact and correct.
+Stock price → requires exact decimal fractions → never double (errors break financial accuracy). Instead, store as integer cents (fixed‑point) or use a decimal type.
+
+The critical difference: int gives exactness; double gives approximation. Money needs exactness.
